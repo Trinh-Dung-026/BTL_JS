@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EasyTicket</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="background-header-main">
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"><img src="/BTL_Javascript/image/logo.png" alt="EasyTicket Logo"></a>
+        </div>
+
+        <nav class="navbar">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Tours</a></li>
+            <li><a href="#">Địa Điểm</a></li>
+            <li><a href="#">Hợp tác với chúng tôi</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-right">
+          <a href="#" class="icon"><i class="fas fa-shopping-cart"></i></a>
+          <a href="../Trang Đăng nhập - Đăng ký/test.html" class="cta-btn"><i class="fa-solid fa-user fa-xs"></i>Login</a>
+
+          <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+
+          <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+              <img src="/BTL_Javascript/image/logo.png" alt="EasyTicket Logo">
+              <button class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="sidebar-menu">
+              <li><a href="#">Tài khoản</a></li>
+              <li><a href="#">Lịch sử đặt vé</a></li>
+              <li><a href="#">Ưu đãi & khuyến mãi</a></li>
+              <li><a href="#">Cài đặt</a></li>
+              <li><a href="#">Đăng xuất</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <main class="main-section">
+      <div class="container_2">
+        <h1>Chào mừng bạn đến với EasyTicket</h1>
+        <p>Nơi đặt vé dễ dàng, uy tín với mọi người</p> 
+      </div>
+    </main>
+
+    <div class="searchbar">
+      <div class="search-item">
+        <label>Địa điểm:</label>
+        <div class="input-box">
+          <input type="text" placeholder="Bạn sẽ đi đâu...?">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+      </div>
+
+      <div class="search-item">
+        <label>Từ:</label>
+        <div class="input-box">
+          <input type="date">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+      </div>
+
+      <div class="search-item">
+        <label>Đến:</label>
+        <div class="input-box">
+          <input type="date" >
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+      </div>
+
+      <div class="search-item guest-dropdown-wrapper">
+        <label>Khách:</label>
+        <div class="input-box" id="guest-toggle">
+          <input type="text" placeholder="Số lượng?" readonly>
+          <i class="fas fa-user-friends"></i>
+        </div>
+
+        <div class="guest-dropdown" id="guest-dropdown">
+          <div class="guest-row">
+            <span>Phòng</span>
+            <div class="stepper">
+              <button class="minus">-</button>
+              <span class="value" data-type="rooms">0</span>
+              <button class="plus">+</button>
+            </div>
+          </div>
+
+          <div class="guest-row">
+            <span>Người Lớn</span>
+            <div class="stepper">
+              <button class="minus">-</button>
+              <span class="value" data-type="adults">0</span>
+              <button class="plus">+</button>
+            </div>
+          </div>
+
+          <div class="guest-row">
+            <span>Trẻ em</span>
+            <div class="stepper">
+              <button class="minus">-</button>
+              <span class="value" data-type="children">0</span>
+              <button class="plus">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="search-btn"><i class="fas fa-search"></i> Tìm Kiếm</button>
+    </div>
+  </div>
+  
+  <footer class="desktop-footer">
+    <div class="desktop-footer-top">
+        <div class="footer-container">
+            <div class="desktop-footer-info-item">
+                <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="info-content">
+                    <h3>Trụ sở chính</h3>
+                    <p>66 Brooklyn golden street line NY, USA</p>
+                </div>
+            </div>
+            <div class="desktop-footer-info-item">
+                <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                <div class="info-content">
+                    <h3>Số Điện Thoại</h3>
+                    <p>+869-878-08-68</p>
+                    <p>+869-878-08-68</p>
+                </div>
+            </div>
+            <div class="desktop-footer-info-item">
+                <div class="icon-box"><i class="far fa-envelope"></i></div>
+                <div class="info-content">
+                    <h3>Mail Cho Chúng Tôi</h3>
+                    <p>EasyTicket@support.com</p>
+                    <p>EasyTicket@support.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="desktop-footer-bottom">
+        <div class="footer-container">
+            <div class="desktop-footer-col about-us">
+                <div class="footer-logo">
+                    <img src="/BTL_Javascript/image/logo.png" alt="EasyTicket Logo">
+                    <span>EasyTicket</span>
+                </div>
+                <p>Mục tiêu và sứ mệnh là để cho người Việt được tận hưởng kì nghỉ bằng cách đặt vé một cách đơn giản, tiện lợi nhất.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="desktop-footer-col quick-links">
+                <h3>Links Nhanh</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Tours</a></li>
+                    <li><a href="#">Địa Điểm</a></li>
+                    <li><a href="#">Về Chúng Tôi</a></li>
+                </ul>
+            </div>
+            <div class="desktop-footer-col gallery-post">
+                <h3>Bộ Sưu Tập</h3>
+                <div class="gallery-grid">
+                    <img src="../image/bg.jpg" alt="Gallery Image 1">
+                    <img src="../image/dao-tuan-chau2.jpg" alt="Gallery Image 2">
+                    <img src="../image/dffb6e561136d5a826693b3dce4421fa.jpg" alt="Gallery Image 3">
+                    <img src="../image/tuan-chau-island-thumbnail_1648189683.jpg" alt="Gallery Image 4">
+                    <img src="../image/bai-bien-dao-tuan-chau.webp" alt="Gallery Image 5">
+                    <img src="../image/avt (2).jpg" alt="Gallery Image 6">
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="desktop-back-to-top"><i class="fas fa-arrow-up"></i></a>
+  </footer>
+
+  <script src="main.js"></script>
+
+</body>
+</html>

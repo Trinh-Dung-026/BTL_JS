@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <form id="login-form">
+        <h3>Đăng nhập</h3>
+
+        <label for="username">Tên đăng nhập:</label>
+        <input type="text" placeholder="Email or Phone" id="username">
+
+        <label for="password">Mật khẩu</label>
+        <input type="password" placeholder="Password" id="password">
+
+        <button>Đăng Nhập</button>
+        
+        <div class="form-footer">
+            <a href="#">Quên mật khẩu?</a>
+            <a href="#">Chưa có tài khoản?, hãy nhấn vào đây</a>
+        </div>
+        <p class="social-text">Đăng nhập với các liên kết xã hội</p>
+    
+        <div class="social-icons">
+
+            <button class="social-icon fb"><i class="fa-brands fa-facebook"></i></button>
+            <button class="social-icon tw"><i class="fa-brands fa-twitter"></i></button>
+            <button class="social-icon in"><i class="fa-brands fa-instagram"></i></button>
+
+        </div>
+        
+    </form>
+
+    <script>
+    document.getElementById("login-form").addEventListener("submit", function(e) {
+        e.preventDefault(); // Ngăn reload form
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    // Biểu thức kiểm tra email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Biểu thức kiểm tra số điện thoại Việt Nam
+    const phoneRegex = /^(0|\+84)(3[2-9]|5[6|8|9]|7[0|6-9]|8[1-5]|9[0-9])[0-9]{7}$/;
+
+    if (!username) {
+        alert("Vui lòng nhập tên đăng nhập.");
+        return;
+    }
+
+    if (!emailRegex.test(username) && !phoneRegex.test(username)) {
+        alert("Tên đăng nhập hoặc Số điện thoại không hợp lệ");
+        return;
+    }
+
+    if (!password) {
+        alert("Vui lòng nhập mật khẩu.");
+        return;
+    }
+
+    if (password.length < 6) {
+        alert("Mật khẩu phải có ít nhất 6 ký tự.");
+        return;
+    }
+
+    // Tạm thời hiển thị thành công (bạn có thể xử lý đăng nhập thực tế ở đây)
+    alert("Đăng nhập thành công!");
+
+    });
+    </script>
+
+</body>
+</html>
