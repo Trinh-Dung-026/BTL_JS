@@ -20,7 +20,7 @@ body {
       rgba(0, 0, 0, 0) 50%,
       rgba(0, 0, 0, 0.5) 100%
     ),
-    url(/BTL_Javascript/image/bg.jpg) no-repeat center/cover;
+    url(../BTL_Javascript/image/bg.jpg) no-repeat center/cover;
 }
 
 /* Container header cho điều hướng chính */
