@@ -1,68 +1,72 @@
-/* Thiết lập lại chung và kiểu cho body vẫn giữ nguyên */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f8f8f8;
-}
-
-/* Nền header với gradient và hình ảnh */
-.background-header-main {
-  position: relative;
-  padding-bottom: 200px; /* Điều chỉnh để kiểm soát khoảng trống bên dưới header cho thanh tìm kiếm */
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(0, 0, 0, 0) 50%,
-      rgba(0, 0, 0, 0.5) 100%
-    ),
-}
-
-/* Container header cho điều hướng chính */
-.header {
-  padding: 15px 30px;
-  background-color: transparent; /* Nền màu xanh đậm cho header */
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 48px;
-  max-width: 1200px; /* Giới hạn chiều rộng nội dung */
-  margin: 0 auto; /* Căn giữa container */
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 0 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-/* Container header cho điều hướng chính */
-.header {
-  padding: 15px 30px;
-  background-color: transparent; /* Nền màu xanh đậm cho header */
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 48px;
-  max-width: 1200px; /* Giới hạn chiều rộng nội dung */
-  margin: 0 auto; /* Căn giữa container */
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 0 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
 .logo img {
   width: 100px;
   height: auto;
 }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Hero/banner */
+.hero {
+    position: relative;
+    height: 380px;
+    background: 
+    linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0, 0, 0, 0.25)),
+    url(../image/bg.jpg) center 30% / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+/*Tiêu đề + breadcrumb trên hero*/
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.breadcrumb {
+    background: rgba(255,255,255, 0.25);
+    padding: 6px 22px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+.breadcrumb a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/*Header trắng trôi bên trên ảnh nền*/
+.main-header {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 80px);
+    z-index: 100;
+    justify-content: center;
+}
+
+.main-header .container {
+    background: #fff;
+    border-radius: 60px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.88);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 80px;
+    width: 100%;
+}
+
 
 /* Điều chỉnh Navbar cho bố cục flex và căn chỉnh */
 .navbar {
@@ -97,22 +101,6 @@ body {
 
 .navbar .nav-links a:hover {
   color: #4CAF50; /* Màu xanh nhạt hơn khi hover để có độ tương phản tốt hơn */
-}
-
-/* Kiểu menu thả xuống */
-ul li ul.dropdown {
-  position: absolute;
-  top: 100%; /* Định vị bên dưới liên kết cha */
-  left: 0;
-  width: 200px; /* Điều chỉnh chiều rộng theo yêu cầu */
-  background: #fff;
-  z-index: 999;
-  display: none;
-  list-style: none; /* Xóa dấu đầu dòng */
-  border-radius: 8px;
-  padding: 10px 0; /* Thêm padding cho dropdown */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  margin-top: 10px; 
 }
 
 .header-right {
@@ -150,40 +138,6 @@ ul li ul.dropdown {
   background-color: #409C44; /* Màu cam đậm hơn khi hover */
 }
 
-/* Phần chính cho văn bản banner */
-main {
-  padding: 80PX 20PX 40PX 20PX; 
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  display: flex; /* Sử dụng flexbox để căn giữa theo chiều dọc */
-  align-items: center; /* Căn giữa nội dung theo chiều dọc */
-  justify-content: flex-start; /* Căn nội dung sang trái theo hình mẫu */
-  min-height: 200px; /* Chiều cao tối thiểu cho phần chính để đẩy thanh tìm kiếm xuống */
-  text-align: left; /*Căn nội dung trong container_2 sang trái*/
-}
-
-.container_2 {
-  max-width: 600px;
-  padding: 20px;
-  margin-left: 10%;
-  margin-right: auto;
-  text-align: left;
-}
-
-.container_2 h1 {
-  font-size: 3.5em; /* Tiêu đề lớn hơn */
-  margin-bottom: 15px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Thêm bóng chữ tinh tế */
-}
-
-.container_2 p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-
 /* Kiểu sidebar (hầu hết giữ nguyên, đảm bảo Z-index) */
 .sidebar-toggle {
   background: none;
@@ -196,18 +150,23 @@ main {
 .sidebar {
   position: fixed;
   top: 0;
-  right:-300px;
+  right: 0;
   width: 300px;
   height: 100vh;
   background-color: #ffffff;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-  padding: 30px 20px;
-  transition: right 0.3s ease;
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s ease, opacity 0.35s ease;
   z-index: 1000;
+  overflow-y: auto;
 }
 
 .sidebar.active {
-  right: 0;
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .close-btn {
@@ -222,7 +181,7 @@ main {
 }
 
 .sidebar img {
-  width: 100px;
+  width: 120px;
   height: auto;
 }
 
@@ -242,10 +201,10 @@ main {
 
 .sidebar-menu li a {
   display: block;
-  padding: 12px 0;
+  padding: 12px 0 0 24px;
   color: #333;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 24px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 

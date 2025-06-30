@@ -33,13 +33,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 48px;
-  max-width: 1200px; /* Giới hạn chiều rộng nội dung */
+  height: 80px;
+  /* max-width: 1200px; Giới hạn chiều rộng nội dung */
   margin: 0 auto; /* Căn giữa container */
   background-color: #ffffff;
-  border-radius: 10px;
-  padding: 0 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border-radius: 60px;
+  padding: 0 32px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
 }
 
 .logo img {
