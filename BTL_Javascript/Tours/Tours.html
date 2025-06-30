@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="Tours.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../Trang Chủ/index.html"><img src="../image/logo.png"></a>
+            </div>
+
+            <div class="navbar">
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Tours</a></li>
+                    <li><a href="#">Địa Điểm</a></li>
+                    <lI><a href="#">Hợp tác với chúng tôi</a></lI>
+                </ul>
+            </div>
+
+            <div class="header-right">
+                <a href="#" class="icon"><i class="fas fa-shopping-cart"></i></a>
+                <a href="../Trang Đăng nhập - Đăng ký/login.html" class="cta-btn"><i class="fa-solid fa-user fa-xs"></i>Login</a>
+
+                <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+            
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="../image/logo.png" alt="EasyTicket Logo">
+            <button class="close-btn"><i class="fas fa-times"></i></button>
+        </div>
+            <ul class="sidebar-menu">
+                <li><a href="#">Tài Khoản</a></li>
+                <li><a href="#">Lịch sử đặt vé</a></li>
+                <li><a href="#">Cài đặt</a></li>
+                <li><a href="#">Đăng Xuất</a></li>
+            </ul>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tours</h1>
+            <nav class="breadcrumb">
+                <a href="../Trang Chủ/index.html">Home</a> &gt; <span>Tours</span>
+            </nav>
+        </div>
+    </section>
+
+    <main class="main">
+        <div class="container main-content-wrapper">
+            <aside class="sidebar-filter">
+                <h2>Destination Category</h2>
+                <ul class="category-list">
+                    <li>
+                        <label>
+                            <input type="checkbox" name="Destination" value="canada"> Canada
+                        </label>
+                        <span>04</span>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="Destination" value="france"> France
+                        </label>
+                        <span>05</span>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="Destination" value="europe"> Europe
+                        </label>
+                        <span>03</span>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="Destination" value="indonesia"> Indonesia
+                        </label>
+                        <span>04</span>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const openBtn = document.querySelector('.sidebar-toggle');
+        const closeBtn = document.querySelector('.close-btn');
+
+        openBtn.addEventListener('click', () =>{
+            sidebar.classList.add('active');
+        })
+
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

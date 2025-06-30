@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Hero/banner */
+.hero {
+    position: relative;
+    height: 380px;
+    background: 
+    linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0, 0, 0, 0.25)),
+    url(../image/bg.jpg) center 30% / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+/*Tiêu đề + breadcrumb trên hero*/
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.breadcrumb {
+    background: rgba(255,255,255, 0.25);
+    padding: 6px 22px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+.breadcrumb a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/*Header trắng trôi bên trên ảnh nền*/
+.main-header {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 80px);
+    z-index: 100;
+    justify-content: center;
+}
+
+.main-header .container {
+    background: #fff;
+    border-radius: 60px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.88);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 80px;
+    width: 100%;
+}
+
+
+/* Điều chỉnh Navbar cho bố cục flex và căn chỉnh */
+.navbar {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Cho phép navbar chiếm không gian còn trống */
+  justify-content: flex-start; /* Căn các liên kết nav sang trái */
+  padding-left: 20px; /*Đẩy các liên kết sang phải một chút*/
+}
+
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0; /* Xóa margin tự động vì chúng ta đang căn giữa bằng justify-content */
+  padding-left: 0; /* Đảm bảo không có padding mặc định */
+}
+
+/* Liên kết Navbar và hiệu ứng hover */
+.navbar .nav-links li {
+  position: relative; /* Để định vị dropdown */
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 5px 0; /* Thêm một ít padding để vùng click rộng hơn */
+  display: block; /* Làm cho toàn bộ khu vực có thể nhấp được */
+}
+
+.navbar .nav-links a:hover {
+  color: #4CAF50; /* Màu xanh nhạt hơn khi hover để có độ tương phản tốt hơn */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Tăng khoảng cách để căn chỉnh tốt hơn */
+}
+
+.icon {
+  color: #333333;
+  font-size: 22px; /* Icon lớn hơn một chút */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #4CAF50;
+}
+
+.cta-btn {
+  color: white;
+  padding: 10px 20px; /* Padding lớn hơn một chút */
+  background-color: #4caf50; /* Nền màu cam cho CTA */
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.cta-btn:hover {
+  background-color: #409C44; /* Màu cam đậm hơn khi hover */
+}
+
+/* Kiểu sidebar (hầu hết giữ nguyên, đảm bảo Z-index) */
+.sidebar-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333333;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #ffffff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+.sidebar img {
+  width: 120px;
+  height: auto;
+}
+
+.sidebar-header {
+  border-bottom: 1px solid #ddd; /* Đường viền nhẹ hơn cho sidebar header */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-menu li a {
+  display: block;
+  padding: 12px 0 0 24px;
+  color: #333;
+  text-decoration: none;
+  font-size: 24px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-menu li a:hover {
+  background-color: #f0f0f0;
+  color: #4CAF50;
+}
