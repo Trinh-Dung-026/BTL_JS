@@ -54,10 +54,234 @@
             </nav>
         </div>
     </section>
-    <div class="box">
-        <h2>1. Tràng An - Ninh Bình</h2>
-        <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/06/Trang-an-ninh-binh-1.jpg" alt="">
+    <div class="containers">
+
+        <div class="destinations-grid">
+            <!-- Vịnh Hạ Long -->
+            <div class="destination-card" onclick="openModal('halong')">
+                <!-- <div class="click-indicator">👆 Click để xem chi tiết</div> -->
+                <div class="card-header">
+                    <h3>🏔️ Vịnh Hạ Long</h3>
+                    <p>Kỳ quan thiên nhiên thế giới với hàng nghìn đảo đá vôi tuyệt đẹp nổi lên từ mặt nước xanh ngọc bích</p>
+                </div>
+                <div class="card-images">
+                    <div class="image-gallery">
+                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&h=300&fit=crop" alt="Vịnh Hạ Long 1">
+                        <img src="https://images.unsplash.com/photo-1570284613060-766c33850e00?w=400&h=300&fit=crop" alt="Vịnh Hạ Long 2">
+                        <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=400&h=300&fit=crop" alt="Vịnh Hạ Long 3">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Vịnh Hạ Long 4">
+                    </div>
+                </div>
+                <div class="tour-info">
+                    <h4>🎯 Các Tour Phổ Biến:</h4>
+                    <ul class="tour-list">
+                        <li>• Tour du thuyền 2 ngày 1 đêm</li>
+                        <li>• Tour khám phá hang động</li>
+                        <li>• Tour chèo kayak</li>
+                        <li>• Tour câu cá & BBQ</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sapa -->
+            <div class="destination-card" onclick="openModal('sapa')">
+                <!-- <div class="click-indicator">👆 Click để xem chi tiết</div> -->
+                <div class="card-header">
+                    <h3>🏔️ Sapa</h3>
+                    <p>Thị trấn núi cao với ruộng bậc thang tuyệt đẹp và nền văn hóa dân tộc thiểu số đa dạng</p>
+                </div>
+                <div class="card-images">
+                    <div class="image-gallery">
+                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&h=300&fit=crop" alt="Sapa 1">
+                        <img src="https://images.unsplash.com/photo-1570284613060-766c33850e00?w=400&h=300&fit=crop" alt="Sapa 2">
+                        <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=400&h=300&fit=crop" alt="Sapa 3">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Sapa 4">
+                    </div>
+                </div>
+                <div class="tour-info">
+                    <h4>🎯 Các Tour Phổ Biến:</h4>
+                    <ul class="tour-list">
+                        <li>• Trekking đỉnh Fansipan</li>
+                        <li>• Tour khám phá bản làng</li>
+                        <li>• Tour ruộng bậc thang</li>
+                        <li>• Tour văn hóa dân tộc</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Hội An -->
+            <div class="destination-card" onclick="openModal('hoian')">
+                <!-- <div class="click-indicator">👆 Click để xem chi tiết</div> -->
+                <div class="card-header">
+                    <h3>🏮 Hội An</h3>
+                    <p>Phố cổ với kiến trúc độc đáo, đèn lồng rực rỡ và ẩm thực phong phú được UNESCO công nhận</p>
+                </div>
+                <div class="card-images">
+                    <div class="image-gallery">
+                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&h=300&fit=crop" alt="Hội An 1">
+                        <img src="https://images.unsplash.com/photo-1570284613060-766c33850e00?w=400&h=300&fit=crop" alt="Hội An 2">
+                        <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=400&h=300&fit=crop" alt="Hội An 3">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Hội An 4">
+                    </div>
+                </div>
+                <div class="tour-info">
+                    <h4>🎯 Các Tour Phổ Biến:</h4>
+                    <ul class="tour-list">
+                        <li>• Tour phố cổ ban đêm</li>
+                        <li>• Tour ẩm thực địa phương</li>
+                        <li>• Tour thả đèn lồng</li>
+                        <li>• Tour xe đạp nông thôn</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Phú Quốc -->
+            <div class="destination-card" onclick="openModal('phuquoc')">
+                <!-- <div class="click-indicator">👆 Click để xem chi tiết</div> -->
+                <div class="card-header">
+                    <h3>🏝️ Phú Quốc</h3>
+                    <p>Đảo ngọc với bãi biển cát trắng, nước biển trong xanh và hải sản tươi ngon</p>
+                </div>
+                <div class="card-images">
+                    <div class="image-gallery">
+                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&h=300&fit=crop" alt="Phú Quốc 1">
+                        <img src="https://images.unsplash.com/photo-1570284613060-766c33850e00?w=400&h=300&fit=crop" alt="Phú Quốc 2">
+                        <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=400&h=300&fit=crop" alt="Phú Quốc 3">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Phú Quốc 4">
+                    </div>
+                </div>
+                <div class="tour-info">
+                    <h4>🎯 Các Tour Phổ Biến:</h4>
+                    <ul class="tour-list">
+                        <li>• Tour cáp treo Hòn Thơm</li>
+                        <li>• Tour lặn ngắm san hô</li>
+                        <li>• Tour câu cá & chợ đêm</li>
+                        <li>• Tour Safari & Vinpearl</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Đà Lạt -->
+            <div class="destination-card" onclick="openModal('dalat')">
+                <!-- <div class="click-indicator">👆 Click để xem chi tiết</div> -->
+                <div class="card-header">
+                    <h3>🌸 Đà Lạt</h3>
+                    <p>Thành phố ngàn hoa với khí hậu mát mẻ, thác nước hùng vĩ và kiến trúc Pháp cổ</p>
+                </div>
+                <div class="card-images">
+                    <div class="image-gallery">
+                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&h=300&fit=crop" alt="Đà Lạt 1">
+                        <img src="https://images.unsplash.com/photo-1570284613060-766c33850e00?w=400&h=300&fit=crop" alt="Đà Lạt 2">
+                        <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=400&h=300&fit=crop" alt="Đà Lạt 3">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Đà Lạt 4">
+                    </div>
+                </div>
+                <div class="tour-info">
+                    <h4>🎯 Các Tour Phổ Biến:</h4>
+                    <ul class="tour-list">
+                        <li>• Tour thác Sekumpul & Elephant</li>
+                        <li>• Tour vườn hoa & café</li>
+                        <li>• Tour canyoning mạo hiểm</li>
+                        <li>• Tour đường hầm đất sét</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ninh Bình -->
+            <div class="destination-card" onclick="openModal('ninhbinh')">
+                <!-- <div class="click-indicator">👆 Xem thêm</div> -->
+                <div class="card-header">
+                    <h3>⛰️ Ninh Bình</h3>
+                    <p>Vùng đất thiêng liêng với những ngọn núi đá vôi hùng vĩ và sông nước trong lành</p>
+                </div>
+                <div class="card-images">
+                    <div class="image-gallery">
+                        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&h=300&fit=crop" alt="Ninh Bình 1">
+                        <img src="https://images.unsplash.com/photo-1570284613060-766c33850e00?w=400&h=300&fit=crop" alt="Ninh Bình 2">
+                        <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=400&h=300&fit=crop" alt="Ninh Bình 3">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Ninh Bình 4">
+                    </div>
+                </div>
+                <div class="tour-info">
+                    <h4>🎯 Các Tour Phổ Biến:</h4>
+                    <ul class="tour-list">
+                        <li>• Tour thuyền Tràng An</li>
+                        <li>• Tour leo núi Múa</li>
+                        <li>• Tour chùa Bái Đính</li>
+                        <li>• Tour xe đạp Tam Cốc</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
+  <footer class="desktop-footer">
+    <div class="desktop-footer-top">
+        <div class="footer-container">
+            <div class="desktop-footer-info-item">
+                <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="info-content">
+                    <h3>Trụ sở chính</h3>
+                    <p>144, Hoàng Quốc Việt, Cầu Giấy, Hà Nội, Việt Nam</p>
+                </div>
+            </div>
+            <div class="desktop-footer-info-item">
+                <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                <div class="info-content">
+                    <h3>Số Điện Thoại</h3>
+                    <p>+869-878-08-68</p>
+                    <p>+869-878-08-68</p>
+                </div>
+            </div>
+            <div class="desktop-footer-info-item">
+                <div class="icon-box"><i class="far fa-envelope"></i></div>
+                <div class="info-content">
+                    <h3>Mail Cho Chúng Tôi</h3>
+                    <p>EasyTicket@support.com</p>
+                    <p>EasyTicket@support.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="desktop-footer-bottom">
+        <div class="footer-container">
+            <div class="desktop-footer-col about-us">
+                <div class="footer-logo">
+                    <img src="../image/logo.png" alt="EasyTicket Logo">
+                    <span>EasyTicket</span>
+                </div>
+                <p>Mục tiêu và sứ mệnh là để cho người Việt được tận hưởng kì nghỉ bằng cách đặt vé một cách đơn giản, tiện lợi nhất.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="desktop-footer-col quick-links">
+                <h3>Links Nhanh</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="../Tours/Tours.html">Tours</a></li>
+                    <li><a href="../Địa điểm/dia-diem.html">Địa Điểm</a></li>
+                    <li><a href="#">Về Chúng Tôi</a></li>
+                </ul>
+            </div>
+            <div class="desktop-footer-col gallery-post">
+                <h3>Bộ Sưu Tập</h3>
+                <div class="gallery-grid">
+                    <img src="../image/bg.jpg" alt="Gallery Image 1">
+                    <img src="../image/dao-tuan-chau2.jpg" alt="Gallery Image 2">
+                    <img src="../image/dffb6e561136d5a826693b3dce4421fa.jpg" alt="Gallery Image 3">
+                    <img src="../image/tuan-chau-island-thumbnail_1648189683.jpg" alt="Gallery Image 4">
+                    <img src="../image/bai-bien-dao-tuan-chau.webp" alt="Gallery Image 5">
+                    <img src="../image/avt (2).jpg" alt="Gallery Image 6">
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="desktop-back-to-top"><i class="fas fa-arrow-up"></i></a>
+  </footer>
 
     <script src="dia-diem.js"></script>
 </body>

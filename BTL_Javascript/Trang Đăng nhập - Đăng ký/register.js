@@ -48,6 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     registerForm.reset();
     // Có thể chuyển hướng:
-    // window.location.href = "login.html";
+    window.location.href = "login.html";
   });
 });

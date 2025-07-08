@@ -35,6 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     alert("Đặt lại mật khẩu thành công! Bạn có thể đăng nhập.");
     form.reset();
-    // window.location.href = "login.html";
+    window.location.href = "login.html";
   });
 });
