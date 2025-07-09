@@ -19,7 +19,7 @@
                     <li><a href="../Trang Chủ/index.html">Home</a></li>
                     <li><a href="../Tours/Tours.html">Tours</a></li>
                     <li><a href="../Địa Điểm/dia-diem.html">Địa Điểm</a></li>
-                    <lI><a href="../Hợp tác/hop-tac.html">Hợp tác với chúng tôi</a></lI>
+                    <lI><a href="#">Hợp tác với chúng tôi</a></lI>
                 </ul>
             </div>
 
@@ -85,70 +85,38 @@
                 </aside>
 
                 <div class="price-filter">
-                    <h2>Giá Vé</h2>
+                    <h2>Giá Vé (Nghìn VNĐ)</h2>
                     <div class="range-slider">
                         <div class="price-values">
-                            <span id="min-price-display">20</span>
-                            <span id="max-price-display">800</span>
+                            <span id="min-price-display">0</span>
+                            <span id="max-price-display">0</span>
                         </div>
-                        <input type="range" class="min-range" min="0" max="1000" value="20" step="10">
-                        <input type="range" class="max-range" min="0" max="1000" value="800" step="10">
+                        <input type="range" class="min-range" min="0" max="3000" value="0" step="10">
+                        <input type="range" class="max-range" min="0" max="3000" value="500" step="10">
                         <div class="slider-track"></div>
                     </div>
                 </div>
-
                 <aside class="sidebar-filter">
-                    <h2>Các Hoạt Động</h2>
+                    <h2>Thời Gian</h2>
                     <ul class="category-list">
                         <li>
                             <label>
-                                <input type="checkbox" name="Destination" value="canada"> Canada
+                                <input type="checkbox" name="Duration" value="UnderADay"> Dưới 1 ngày
                             </label>
                         </li>
                         <li>
                             <label>
-                                <input type="checkbox" name="Destination" value="france"> France
+                                <input type="checkbox" name="Duration" value="ADay"> 1 - 2 ngày
                             </label>
                         </li>
                         <li>
                             <label>
-                                <input type="checkbox" name="Destination" value="europe"> Europe
+                                <input type="checkbox" name="Duration" value="Days"> 2 - 4 ngày
                             </label>
                         </li>
                         <li>
                             <label>
-                                <input type="checkbox" name="Destination" value="indonesia"> Indonesia
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox" name="Destination" value="nepal"> Nepal
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox" name="Destination" value="maldives"> Maldives
-                            </label>
-                        </li>
-                    </ul>
-                </aside>
-
-                <aside class="sidebar-filter">
-                    <h2>Duration</h2>
-                    <ul class="category-list">
-                        <li>
-                            <label>
-                                <input type="checkbox" name="Duration" value="onlyperson"> 1 - 2 ngày
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox" name="Duration" value="family"> 2 - 4 ngày
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox" name="Duration" value="Group"> 4 - 6 ngày
+                                <input type="checkbox" name="Duration" value="Many_Days"> 4 - 6 ngày
                             </label>
                         </li>
                     </ul>
@@ -176,67 +144,241 @@
                 </aside>
                 
                 <aside class="sidebar-filter">
-                    <h2>Loại Tour</h2>
+                    <h2>Loại Vé</h2>
                     <ul class="category-list">
                         <li>
                             <label>
-                                <input type="checkbox" name="Type" value="relaxed"> Tour Nghỉ Dưỡng
+                                <input type="checkbox" name="Type" value="relaxed"> Nghỉ Dưỡng
                             </label>
                         </li>
                         <li>
                             <label>
-                                <input type="checkbox" name="Type" value="adventure"> Tour Khám Phá
+                                <input type="checkbox" name="Type" value="adventure"> Khám Phá
                             </label>
                         </li>
                         <li>
                             <label>
-                                <input type="checkbox" name="Type" value="Visit"> Tour Tham Quan
+                                <input type="checkbox" name="Type" value="Visit"> Tham Quan
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="Type" value="Playing"> Vui Chơi - Giải Trí
                             </label>
                         </li>
                     </ul>
                 </aside>
+                <button id="reset-filters" class="clear-btn">Xóa tất cả lọc</button>
             </div>
 
             <section class="tour-listings">
-                <div class="tour-card">
+                <div class="tour-card"
+                        data-destination="Quang_Ninh"
+                        data-duration="ADay"
+                        data-people="Group"
+                        data-type="adventure"
+                        data-price="245">
                     <div class="tour-image">
-                        <img src="../image/dao-tuan-chau2.jpg" alt="Tour Image 1">
-                        <span class="discount">50% Off</span>
+                        <img src="../image/Vinh-Ha-Long-1.jpg" alt="Tour Image 1">
+                        <span class="discount">30% Off</span>
                     </div>
                     <div class="tour-info">
-                        <h3>Experience The Incredible India With EasyTicket</h3>
+                        <h3>Vịnh Hạ Long</h3>
                         <div class="location-duration">
-                            <p><i class="fas fa-map-marker-alt"></i> Bhutann, India, Pokhara</p>
-                            <p><i class="far fa-clock"></i> 6 Days - 2 Nights</p>
+                            <p><i class="fas fa-map-marker-alt"></i> TP. Hạ Long, Quảng Ninh</p>
+                            <p><i class="far fa-clock"></i> 1 - 2 ngày</p>
+                            <p><i class="fa-solid fa-users"></i> Nhóm</p>
+                            <p><i class="fa-solid fa-magnifying-glass"></i> Du thuyền, khám phá hang động</p>
                         </div>
                         <div class="price">
-                            <span class="current-price">$450</span>
-                            <span class="old-price">$650</span>
+                            <span class="current-price">245.000 VNĐ</span>
+                            <span class="old-price">350.000 VNĐ</span>
                         </div>
-                        <button class="book-now-btn">Book Now</button>
+                        <button class="book-now-btn">Đặt Ngay</button>
                     </div>
                 </div>
 
-                <div class="tour-card">
+                <div class="tour-card"
+                    data-destination="Quang_Ninh"
+                    data-duration="ADay"
+                    data-people="family"
+                    data-type="Playing"
+                    data-price="440">
                     <div class="tour-image">
-                        <img src="../image/bai-bien-dao-tuan-chau.webp" alt="Tour Image 2">
-                        <span class="discount">50% Off</span>
+                        <img src="../image/cong-vien-sun-world-ha-long-1-azgotravelvn.jpg" alt="Tour Image 2">
+                        <span class="discount">20% Off</span>
                     </div>
                     <div class="tour-info">
-                        <h3>Discover Our Luxury Tour Thailand & VietNam</h3>
+                        <h3>SunWorld Hạ Long Park</h3>
                         <div class="location-duration">
-                            <p><i class="fas fa-map-marker-alt"></i> Bhutan, India, Pokhara</p>
-                            <p><i class="far fa-clock"></i> 6 Days - 2 Nights</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Bãi Cháy, Hạ Long</p>
+                            <p><i class="far fa-clock"></i> 1 ngày</p>
+                            <p><i class="fa-solid fa-users"></i> Gia Đình, bạn bè</p>
+                            <p><i class="fa-solid fa-magnifying-glass"></i> Vui Chơi - Giải Trí</p>
                         </div>
                         <div class="price">
-                            <span class="current-price">$350</span>
-                            <span class="old-price">$450</span>
+                            <span class="current-price">440.000 VNĐ</span>
+                            <span class="old-price">550.000 VNĐ</span>
                         </div>
-                        <button class="book-now-btn">Book Now</button>
+                        <button class="book-now-btn">Đặt Ngay</button>
                     </div>
                 </div>
 
+                <div class="tour-card"
+                    data-destination="Ninh_Binh"
+                    data-duration="UnderADay"
+                    data-people="Group"
+                    data-type="adventure"
+                    data-price="270">
+                    <div class="tour-image">
+                        <img src="../image/Trang_An.jpg" alt="Tour Image 2">
+                        <span class="discount">28% Off</span>
+                    </div>
+                    <div class="tour-info">
+                        <h3>Tràng An</h3>
+                        <div class="location-duration">
+                            <p><i class="fas fa-map-marker-alt"></i> Xã Trường Yên, Hoa Lư</p>
+                            <p><i class="far fa-clock"></i> 2 - 3 tiếng</p>
+                            <p><i class="fa-solid fa-users"></i> Nhóm</p>
+                            <p><i class="fa-solid fa-magnifying-glass"></i> Ngồi thuyền, ngắm cảnh thiên nhiên</p>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">270.000 VNĐ</span>
+                            <span class="old-price">375.000 VNĐ</span>
+                        </div>
+                        <button class="book-now-btn">Đặt Ngay</button>
+                    </div>
+                </div>
 
+                <div class="tour-card"
+                    data-destination="Ninh_Binh"
+                    data-duration="UnderADay"
+                    data-people="Group"
+                    data-type="adventure"
+                    data-price="267">
+                    <div class="tour-image">
+                        <img src="../image/TamCoc.jpg" alt="Tour Image 2">
+                        <span class="discount">43% Off</span>
+                    </div>
+                    <div class="tour-info">
+                        <h3>Tam Cốc - Bích Động</h3>
+                        <div class="location-duration">
+                            <p><i class="fas fa-map-marker-alt"></i> Ninh Hải, Hoa Lư</p>
+                            <p><i class="far fa-clock"></i> 2 tiếng</p>
+                            <p><i class="fa-solid fa-users"></i> Nhóm</p>
+                            <p><i class="fa-solid fa-magnifying-glass"></i> Khám Phá</p>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">267.000 VNĐ</span>
+                            <span class="old-price">475.000 VNĐ</span>
+                        </div>
+                        <button class="book-now-btn">Đặt Ngay</button>
+                    </div>
+                </div>
+
+                <div class="tour-card"
+                    data-destination="Thanh_Hoa"
+                    data-duration="ADay"
+                    data-people="Group"
+                    data-type="relaxed,adventure"
+                    data-price="2000">
+                    <div class="tour-image">
+                        <img src="../image/PuLuong.jpg" alt="Tour Image 2">
+                        <span class="discount">20% Off</span>
+                    </div>
+                    <div class="tour-info">
+                        <h3>Khu bảo tồn thiên nhiên Pù Luông</h3>
+                        <div class="location-duration">
+                            <p><i class="fas fa-map-marker-alt"></i> Bá Thước, Thanh Hóa</p>
+                            <p><i class="far fa-clock"></i> 2 ngày 1 đêm</p>
+                            <p><i class="fa-solid fa-users"></i> Nhóm</p>
+                            <p><i class="fa-solid fa-magnifying-glass"></i> Trekking, Nghỉ Dưỡng</p>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">2.000.000 VNĐ</span>
+                            <span class="old-price">2.500.000 VNĐ</span>
+                        </div>
+                        <button class="book-now-btn">Đặt Ngay</button>
+                    </div>
+                </div>
+
+                <div class="tour-card"
+                    data-destination="Thanh_Hoa"
+                    data-duration="UnderADay"
+                    data-people="Group"
+                    data-type="adventure"
+                    data-price="20">
+                    <div class="tour-image">
+                        <img src="../image/ThanhNhaHo.jpg" alt="Tour Image 2">
+                        <span class="discount">60% Off</span>
+                    </div>
+                    <div class="tour-info">
+                        <h3>Thành Nhà Hồ</h3>
+                        <div class="location-duration">
+                            <p><i class="fas fa-map-marker-alt"></i> Vĩnh Lộc, Thanh Hóa</p>
+                            <p><i class="far fa-clock"></i> 1 - 2 tiếng</p>
+                            <p><i class="fa-solid fa-users"></i> Nhóm</p>
+                            <p><i class="fa-solid fa-magnifying-glass"></i> Lịch sử - văn hóa</p>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">20.000 VNĐ</span>
+                            <span class="old-price">50.000 VNĐ</span>
+                        </div>
+                        <button class="book-now-btn">Đặt Ngay</button>
+                    </div>
+                </div>
+
+                <div class="tour-card"
+                    data-destination="Phu_Tho"
+                    data-duration="ADay"
+                    data-people="Group"
+                    data-type="adventure,relaxed"
+                    data-price="945">
+                    <div class="tour-image">
+                        <img src="../image/XuanSon.jpg" alt="Tour Image 2">
+                        <span class="discount">65% Off</span>
+                    </div>
+                    <div class="tour-info">
+                        <h3>Vườn Quốc Gia Xuân Sơn</h3>
+                        <div class="location-duration">
+                            <p><i class="fas fa-map-marker-alt"></i> Tân Sơn, Phú Thọ</p>
+                            <p><i class="far fa-clock"></i> 1 - 2 ngày</p>
+                            <p><i class="fa-solid fa-users"></i> Nhóm</p>
+                            <p><i class="fa-solid fa-magnifying-glass"></i> Trekking, khám phá hang động, nghỉ homestay</p>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">945.000 VNĐ</span>
+                            <span class="old-price">2.700.000 VNĐ</span>
+                        </div>
+                        <button class="book-now-btn">Đặt Ngay</button>
+                    </div>
+                </div>
+
+                <div class="tour-card"
+                    data-destination="Phu_Tho"
+                    data-duration="UnderADay"
+                    data-people="Group"
+                    data-type="adventure"
+                    data-price="35">
+                    <div class="tour-image">
+                        <img src="../image/AoGioi.png" alt="Tour Image 2">
+                        <span class="discount">30% Off</span>
+                    </div>
+                    <div class="tour-info">
+                        <h3>Ao Giời - Suối Tiên</h3>
+                        <div class="location-duration">
+                            <p><i class="fas fa-map-marker-alt"></i> Thanh Sơn, Phú Thọ</p>
+                            <p><i class="far fa-clock"></i> Nửa ngày - 1 ngày</p>
+                            <p><i class="fa-solid fa-users"></i> Nhóm</p>
+                            <p><i class="fa-solid fa-magnifying-glass"></i> Dã ngoại - sinh thái</p>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">35.000 VNĐ</span>
+                            <span class="old-price">50.000 VNĐ</span>
+                        </div>
+                        <button class="book-now-btn">Đặt Ngay</button>
+                    </div>
+                </div>
                 
             </section>
         </div>
@@ -249,7 +391,7 @@
                 <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
                 <div class="info-content">
                     <h3>Trụ sở chính</h3>
-                    <p>122, Hoàng Quốc Việt, Cầu Giấy, Hà Nội, Việt Nam</p>
+                    <p>66 Brooklyn golden street line NY, USA</p>
                 </div>
             </div>
             <div class="desktop-footer-info-item">
@@ -275,7 +417,7 @@
         <div class="footer-container">
             <div class="desktop-footer-col about-us">
                 <div class="footer-logo">
-                    <img src="../image/logo.png" alt="EasyTicket Logo">
+                    <img src="/BTL_Javascript/image/logo.png" alt="EasyTicket Logo">
                     <span>EasyTicket</span>
                 </div>
                 <p>Mục tiêu và sứ mệnh là để cho người Việt được tận hưởng kì nghỉ bằng cách đặt vé một cách đơn giản, tiện lợi nhất.</p>
@@ -289,9 +431,9 @@
             <div class="desktop-footer-col quick-links">
                 <h3>Links Nhanh</h3>
                 <ul>
-                    <li><a href="../Trang Chủ/index.html">Home</a></li>
-                    <li><a href="Tours.html">Tours</a></li>
-                    <li><a href="../Địa điểm/dia-diem.html">Địa Điểm</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Tours</a></li>
+                    <li><a href="#">Địa Điểm</a></li>
                     <li><a href="#">Về Chúng Tôi</a></li>
                 </ul>
             </div>
