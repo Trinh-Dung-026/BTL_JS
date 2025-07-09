@@ -353,7 +353,6 @@ body {
   width: 100%;
   height: 5px;
   background: none;
-  appearance: none;
   -webkit-appearance: none;
   pointer-events: none;
   z-index: 2;
@@ -781,5 +780,24 @@ body {
 
 .desktop-back-to-top:hover {
     background-color: #4CAF50; /* Màu hover */
+}
+
+/*Xóa lọc Dữ liệu*/
+.clear-btn {
+  margin-top: 20px;
+  padding: 8px 12px;
+  background-color: white;
+  color:#333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.clear-btn:hover {
+  background-color: #4CAF50;
+  color: white;
 }
 
