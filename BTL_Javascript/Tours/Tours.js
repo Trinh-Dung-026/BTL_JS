@@ -94,3 +94,88 @@ updateSlider();
 
 //Cập nhập lại vị trí khi kích thước cửa sổ thay đổi (để sliderWidth đúng)
 window.addEventListener('resize', updateSlider);
+
+
+//Phần lọc dữ liệu
+document.addEventListener("DOMContentLoaded", function(){
+    //Lấy tất cả checkbox
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const  tourCards = document.querySelectorAll('.tour-card');
+
+    //Lấy input thanh trượt giá
+    const minRange = document.querySelector('.min-range');
+    const maxRange = document.querySelector('.max-range');
+
+    //Gán sự kiện khi người dùng thay đổi các checkbox
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', filterTours);
+    })
+
+    //Cập nhập giá hiển thị khi người dùng kéo thanh giá
+    minRange.addEventListener('input', () => {
+        document.getElementById('min-price-display').innerText = minRange.value;
+        filterTours();
+    })
+
+    maxRange.addEventListener('input', () => {
+        document.getElementById('max-price-display').innerText = maxRange.value;
+        filterTours();
+    })
+
+    //Hàm lấy các giá trị đã chọn từ checkbox theo tên
+    function getCheckedValues(name) {
+        return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(cb => cb.value);
+    }
+
+    //Hàm chính để lọc các tour
+    function filterTours() {
+        //Lưu các lựa chọn lọc từ người dùng
+        const filters = {
+            Destination: getCheckedValues('Destination'),
+            Duration: getCheckedValues('Duration'),
+            NumberOfPeople: getCheckedValues('NumberOfPeople'),
+            Type: getCheckedValues('Type')
+        }
+
+        //Giá trị tối thiểu và tối đa từ thanh trượt giá vé
+        const minPrice = parseInt(minRange.value);
+        const maxPrice = parseInt(maxRange.value);
+
+        //Duyệt qua tất cả các tour để kiểm tra điều kiện
+        tourCards.forEach(card => {
+            const cardPrice = parseInt(card.dataset.price);     //Giá tour
+            const cardTypes = card.dataset.type.split(',');     //Tách các loại vé (nếu nhiều)
+
+            //Kiểm tra từng điều kiện lọc
+            const matchDestination = filters.Destination.length ===0 || filters.Destination.includes(card.dataset.destination);
+            const matchDuration = filters.Duration.length === 0 || filters.Duration.includes(card.dataset.duration);
+            const matchType = filters.Type.length === 0 || filters.Type.some(type => cardTypes.includes(type));
+            const matchPeople = filters.NumberOfPeople.length === 0 || filters.NumberOfPeople.includes(card.dataset.people);
+            const matchPrice = cardPrice >= minPrice && cardPrice <= maxPrice;
+
+            //Nếu tour thỏa mãn tất cả các điều kiện -> hiển thị
+            if (matchDestination && matchDestination && matchPeople && matchType && matchPrice) {
+                card.style.display = "block";
+            }
+            else {
+                card.style.display = "none";
+            }
+        })
+    }
+    //Nút xóa lọc
+    const resetBtn = document.getElementById("reset-filters");
+
+    resetBtn.addEventListener("click", () => {
+        //Bỏ chọn tất cả checkBox
+        checkboxes.forEach(cb => cb.checked = false);
+
+        //Reset thanh trượt về mặc định
+        minRange.value = 0;
+        maxRange.value = 500;
+        document.getElementById('min-price-display').innerText = minRange.value;
+        document.getElementById('max-price-display').innerText = maxRange.value;
+
+        //Hiển thị lại toàn bộ tour
+        filterTours();
+    })
+})
