@@ -227,3 +227,28 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 })
+
+
+
+// Xử lý khi nhấn vào "Đặt Ngay"
+    const bookButtons = document.querySelectorAll('.book-now-btn');
+
+    bookButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const card = e.target.closest('.tour-card');
+        const title = card.querySelector('h3')?.textContent?.trim();
+        const price = card.dataset.price;
+        const image = card.querySelector('img')?.getAttribute('src');
+
+        // Tạo URL tới file cùng thư mục: thanh-toan.html
+        const url = new URL("thanh-toan.html", window.location.href);
+
+        url.searchParams.set("title", title);
+        url.searchParams.set("price", price);
+        url.searchParams.set("image", image);
+
+        window.location.href = url.toString();
+    });
+});
+
+

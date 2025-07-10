@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang Thanh Toán</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap"
+        rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 30px 20px;
+    }
+
+    .payment-container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .tour-image {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .tour-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #4CAF50;
+    }
+
+    .tour-price {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+
+    .form-section {
+      margin-bottom: 30px;
+    }
+
+    .form-section h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .form-group input[type="number"] {
+      max-width: 200px;
+    }
+
+    .total-section {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0;
+      color: #4CAF50;
+    }
+
+    .pay-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      width: 100%;
+    }
+
+    .pay-btn i {
+      margin-right: 10px;
+    }
+
+    .pay-btn:hover {
+      background-color: #3c9143;
+    }
+
+    /* Popup QR */
+    #qr-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(3px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .popup-overlay {
+      position: absolute;
+      background: rgba(0,0,0,0.4);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .popup-content {
+      position: relative;
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      z-index: 10000;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      animation: scaleIn 0.3s ease-out;
+    }
+
+    .popup-content h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #4CAF50;
+    }
+
+    .qr-image {
+      width: 250px;
+      height: 250px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .close-popup {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
+    }
+
+    .close-popup:hover {
+      background-color: #3b8f41;
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.6);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="payment-container">
+    <img id="tour-image" class="tour-image" src="" alt="Ảnh tour">
+    <h1 id="tour-title" class="tour-title">Tên Tour</h1>
+    <p id="tour-price" class="tour-price">Giá: ...</p>
+
+    <div class="form-section">
+      <h3>Thông Tin Khách Hàng</h3>
+      <div class="form-group">
+        <label for="name">Họ tên</label>
+        <input type="text" id="name" placeholder="Nhập họ tên của bạn">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Nhập email">
+      </div>
+      <div class="form-group">
+        <label for="phone">Số điện thoại</label>
+        <input type="tel" id="phone" placeholder="Nhập số điện thoại">
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>Thông Tin Đặt Vé</h3>
+      <div class="form-group">
+        <label for="adults">Số người lớn</label>
+        <input type="number" id="adults" min="1" value="1">
+      </div>
+      <div class="form-group">
+        <label for="children">Số trẻ em</label>
+        <input type="number" id="children" min="0" value="0">
+      </div>
+    </div>
+
+    <div class="total-section">
+      Tổng Thanh Toán: <span id="total-price">... VNĐ</span>
+    </div>
+
+    <button class="pay-btn">
+      <i class="fas fa-credit-card"></i> Thanh Toán Ngay
+    </button>
+  </div>
+
+  <!-- Popup QR -->
+  <div id="qr-popup">
+    <div class="popup-overlay"></div>
+    <div class="popup-content">
+      <h3>Quét mã để thanh toán</h3>
+      <img src="../image/qr.jpg" alt="QR Thanh Toán" class="qr-image">
+      <button class="close-popup">Đóng</button>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get("title");
+    const price = parseInt(params.get("price"));
+    const image = params.get("image");
+
+    document.getElementById("tour-title").textContent = title || "Không có tiêu đề";
+    document.getElementById("tour-price").textContent = `Giá cơ bản: ${price.toLocaleString()},000 VNĐ`;
+    document.getElementById("tour-image").src = image || "../image/default.jpg";
+
+    const adultsInput = document.getElementById("adults");
+    const childrenInput = document.getElementById("children");
+    const totalPriceDisplay = document.getElementById("total-price");
+
+    function updateTotal() {
+      const adults = parseInt(adultsInput.value) || 0;
+      const children = parseInt(childrenInput.value) || 0;
+
+      const adultTotal = adults * price;
+      const childTotal = children * price * 0.5;
+      const total = adultTotal + childTotal;
+
+      totalPriceDisplay.textContent = `${total.toLocaleString()},000 VNĐ`;
+    }
+
+    adultsInput.addEventListener("input", updateTotal);
+    childrenInput.addEventListener("input", updateTotal);
+    updateTotal();
+
+    // Xử lý popup QR
+    const payBtn = document.querySelector('.pay-btn');
+    const popup = document.getElementById('qr-popup');
+    const closePopup = document.querySelector('.close-popup');
+
+    payBtn.addEventListener('click', () => {
+      popup.style.display = 'flex';
+    });
+
+    closePopup.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
