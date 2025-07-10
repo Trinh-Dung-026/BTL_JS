@@ -1,0 +1,802 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Hero/banner */
+.hero {
+    position: relative;
+    height: 380px;
+    background: 
+    linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0, 0, 0, 0.25)),
+    url(../image/bg.jpg) center 30% / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+/*Tiêu đề + breadcrumb trên hero*/
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.breadcrumb {
+    background: rgba(255,255,255, 0.25);
+    padding: 6px 22px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+.breadcrumb a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/*Header trắng trôi bên trên ảnh nền*/
+.main-header {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 80px);
+    z-index: 100;
+    justify-content: center;
+}
+
+.main-header .container {
+    background: #fff;
+    border-radius: 60px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.88);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 80px;
+    width: 100%;
+}
+
+
+/* Điều chỉnh Navbar cho bố cục flex và căn chỉnh */
+.navbar {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Cho phép navbar chiếm không gian còn trống */
+  justify-content: flex-start; /* Căn các liên kết nav sang trái */
+  padding-left: 20px; /*Đẩy các liên kết sang phải một chút*/
+}
+
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0; /* Xóa margin tự động vì chúng ta đang căn giữa bằng justify-content */
+  padding-left: 0; /* Đảm bảo không có padding mặc định */
+}
+
+/* Liên kết Navbar và hiệu ứng hover */
+.navbar .nav-links li {
+  position: relative; /* Để định vị dropdown */
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 5px 0; /* Thêm một ít padding để vùng click rộng hơn */
+  display: block; /* Làm cho toàn bộ khu vực có thể nhấp được */
+}
+
+.navbar .nav-links a:hover {
+  color: #4CAF50; /* Màu xanh nhạt hơn khi hover để có độ tương phản tốt hơn */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Tăng khoảng cách để căn chỉnh tốt hơn */
+}
+
+.icon {
+  color: #333333;
+  font-size: 22px; /* Icon lớn hơn một chút */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #4CAF50;
+}
+
+.cta-btn {
+  color: white;
+  padding: 10px 20px; /* Padding lớn hơn một chút */
+  background-color: #4caf50; /* Nền màu cam cho CTA */
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.cta-btn:hover {
+  background-color: #409C44; /* Màu đậm hơn khi hover */
+}
+
+/* Kiểu sidebar (hầu hết giữ nguyên, đảm bảo Z-index) */
+.sidebar-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333333;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #ffffff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+.sidebar img {
+  width: 120px;
+  height: auto;
+}
+
+.sidebar-header {
+  border-bottom: 1px solid #ddd; /* Đường viền nhẹ hơn cho sidebar header */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-menu li a {
+  display: block;
+  padding: 12px 0 0 24px;
+  color: #333;
+  text-decoration: none;
+  font-size: 24px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-menu li a:hover {
+  background-color: #f0f0f0;
+  color: #4CAF50;
+}
+
+/* Style cho Main Section*/
+.main {
+  padding: 40px 0;
+  background-color: #f8f8f8;
+}
+
+.main-content-wrapper {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  align-items: flex-start;
+
+}
+
+
+/*Sidebar Filter Styling*/
+.filter-column {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.sidebar-filter {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-filter h2 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.sidebar-filter .category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-filter .category-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.sidebar-filter .category-list li:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-filter .category-list li:hover {
+  color: #4CAF50;
+}
+
+.sidebar-filter .category-list label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.sidebar-filter .category-list input[type="checkbox"] {
+  margin-right: 12px;
+  width: 18px;
+  height: 18px;
+  accent-color: white;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar-filter .category-list input[type="checkbox"]:checked {
+  border-color: #4CAF50;
+  background-color: #4CAF50;
+}
+
+.sidebar-filter .category-list span {
+  font-weight: 500;
+  color: #777;
+}
+
+/*Thiết kế phần lọc giá*/
+.price-filter {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.price-filter h2 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 35px;
+  font-weight: 600;
+}
+
+.price-filter .range-slider {
+  position: relative;
+  width: 100%;
+}
+
+.price-filter .price-values {
+  position: absolute;
+  width: 100%;
+  height: 0;
+}
+
+.price-filter .price-values span {
+  position: absolute;
+  font-size: 14px;
+  font-weight: 470;
+  color: #fff;
+  background-color: #4CAF50;
+  padding: 2px 4px;
+  border-radius: 5px;
+  min-width: 25px;
+  text-align: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/*Đặt mặc định lại giá trị thanh input chỉnh giá*/
+.range-slider input[type="range"] {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: none;
+  -webkit-appearance: none;
+  pointer-events: none;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+}
+
+/*Custom track cho phạm vi đầu vào*/
+.range-slider input[type="range"]::-webkit-slider-runnable-track {
+  background: transparent;
+  border: none;
+  height: 5px;
+}
+
+.range-slider input[type="range"]::-moz-range-track {
+  background: transparent;
+  border: none;
+  height: 5px;
+}
+
+.range-slider input[type="range"]::-ms-track {
+  background: transparent;
+  border: none;
+  height: 5px;
+}
+
+/*Custom Thumb (Handle) cho phạm vi đầu vào*/
+.range-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: grab;
+  pointer-events: all;
+  margin-top: -8px;
+  box-shadow: 0 2px 5px rgba(0,0,0, 0.1);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.range-slider input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: grab;
+  pointer-events: all;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.range-slider input[type="range"]::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 2px solid #4CAF50;
+  border-radius: 50%;
+  cursor: grab;
+  pointer-events: all;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.range-slider input[type="range"]::-webkit-slider-thumb:active,
+.range-slider input[type="range"]::-moz-range-thumb:active,
+.range-slider input[type="range"]::-ms-thumb:active {
+  cursor: grabbing;
+}
+
+/*Custom Track Styling (Hiện đường lựa chọn)*/
+.range-slider .slider-track {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: #fff;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+/*Thiết kế phần Tour Listings Section*/
+.tour-listings {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/*Thiết kế thẻ Tour*/
+.tour-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tour-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tour-image {
+  position: relative;
+  width: 100%;
+  padding-top: 75%;
+  overflow: hidden;
+}
+
+.tour-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.tour-card:hover .tour-image img {
+  transform: scale(1.05);
+}
+
+.tour-image .discount {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.tour-info {
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tour-info h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  min-height: 56px;
+}
+
+.tour-info h3:hover {
+  color: #4CAF50;
+  transition: color 0.3s ease;
+}
+
+.tour-info .location-duration {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #666;
+}
+
+.tour-info .location-duration p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.tour-info .location-duration i {
+  margin-right: 8px;
+  color: black;
+  font-size: 16px;
+}
+
+.tour-info .price {
+  display: flex;
+  align-items: baseline;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.tour-info .price .current-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #4CAF50;
+  margin-right: 10px;
+}
+
+.tour-info .price .old-price {
+  font-size: 18px;
+  color: #999;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.book-now-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #409C44;
+  color: white;
+  transform: translateY(-2px);
+}
+
+
+
+/*Phần Footer*/
+.desktop-footer {
+    background-color: #1a1a1a; /* Nền tối tổng thể */
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    position: relative; /* Cho nút back-to-top */
+    padding-top: 20px; /* Một chút padding trên cùng */
+    padding-bottom: 20px; /* Một chút padding dưới cùng */
+}
+
+.footer-container {
+    max-width: 1200px; /* Chiều rộng tối đa của nội dung footer */
+    margin: 0 auto; /* Căn giữa container */
+    padding: 0 15px; /* Padding hai bên */
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các cột xuống dòng nếu không đủ chỗ (nhưng sẽ không tối ưu cho mobile) */
+    justify-content: space-between; /* Căn đều các cột */
+    align-items: flex-start; /* Căn trên các cột */
+}
+
+/* Phần trên của footer (Location, Phone, Mail) */
+.desktop-footer-top {
+    background-color: #282828; /* Nền hơi sáng hơn một chút */
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Đường kẻ phân cách */
+    margin-bottom: 40px; /* Khoảng cách giữa phần trên và phần dưới */
+}
+
+.desktop-footer-top .footer-container {
+    justify-content: space-around; /* Căn đều các mục */
+    gap: 20px; /* Khoảng cách giữa các mục */
+}
+
+.desktop-footer-info-item {
+    display: flex;
+    align-items: center;
+    flex-basis: 30%; /* Mỗi mục chiếm khoảng 1/3 */
+    min-width: 250px; /* Đảm bảo không quá nhỏ */
+}
+
+.desktop-footer-info-item .icon-box {
+    background-color: #333333; /* Nền icon */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-right: 15px;
+    color: #4CAF50; /* Màu icon */
+}
+
+.desktop-footer-info-item .info-content h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.desktop-footer-info-item .info-content p {
+    margin: 3px 0 0;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+/* Phần dưới của footer (About Us, Quick Links, Services, Gallery) */
+.desktop-footer-bottom .footer-container {
+    /* Đã được định nghĩa ở .footer-container chung */
+    align-items: flex-start;
+}
+
+.desktop-footer-col {
+    flex-basis: 23%; /* Mỗi cột chiếm khoảng 1/4 */
+    margin-bottom: 30px; /* Khoảng cách dưới cho mỗi cột */
+    padding: 0 10px; /* Khoảng cách bên trong cột */
+}
+
+.desktop-footer-col h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    position: relative;
+}
+
+.desktop-footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 2px;
+    background-color: #4CAF50; /* Đường gạch dưới tiêu đề */
+}
+
+/* Cột About Us */
+.desktop-footer-col.about-us .footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.desktop-footer-col.about-us .footer-logo img {
+    height: 35px; /* Kích thước logo */
+    margin-right: 10px;
+}
+
+.desktop-footer-col.about-us .footer-logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.desktop-footer-col.about-us p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #aaaaaa;
+    margin-bottom: 20px;
+}
+
+.desktop-footer-col.about-us .social-links a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background-color: #333333;
+    color: #ffffff;
+    border-radius: 50%;
+    margin-right: 8px;
+    font-size: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.desktop-footer-col.about-us .social-links a:hover {
+    background-color: #4CAF50;
+}
+
+/* Quick Links và Services */
+.desktop-footer-col.quick-links ul,
+.desktop-footer-col.services ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.desktop-footer-col.quick-links ul li,
+.desktop-footer-col.services ul li {
+    margin-bottom: 10px;
+}
+
+.desktop-footer-col.quick-links ul li a,
+.desktop-footer-col.services ul li a {
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.desktop-footer-col.quick-links ul li a:hover,
+.desktop-footer-col.services ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Gallery Post */
+.desktop-footer-col.gallery-post .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột ảnh */
+    gap: 8px; /* Khoảng cách giữa các ảnh */
+}
+
+.desktop-footer-col.gallery-post .gallery-grid img {
+    width: 100%;
+    height: 70px; /* Chiều cao cố định cho ảnh */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    border-radius: 3px;
+}
+
+/* Nút Back to Top đơn giản (chỉ hiển thị trên desktop) */
+.desktop-back-to-top {
+    position: absolute;
+    bottom: 20px; /* Khoảng cách từ dưới lên */
+    right: 20px; /* Khoảng cách từ phải sang */
+    background-color: #4CAF50; /* Màu của nút */
+    color: #ffffff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease;
+    z-index: 99; /* Đảm bảo nút nằm trên cùng */
+}
+
+.desktop-back-to-top:hover {
+    background-color: #4CAF50; /* Màu hover */
+}
+
+/*Xóa lọc Dữ liệu*/
+.clear-btn {
+  margin-top: 20px;
+  padding: 8px 12px;
+  background-color: white;
+  color:#333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.clear-btn:hover {
+  background-color: #4CAF50;
+  color: white;
+}
