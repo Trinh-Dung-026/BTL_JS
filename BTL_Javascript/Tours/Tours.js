@@ -147,14 +147,30 @@ document.addEventListener("DOMContentLoaded", function(){
             const cardTypes = card.dataset.type.split(',');     //Tách các loại vé (nếu nhiều)
 
             //Kiểm tra từng điều kiện lọc
-            const matchDestination = filters.Destination.length ===0 || filters.Destination.includes(card.dataset.destination);
-            const matchDuration = filters.Duration.length === 0 || filters.Duration.includes(card.dataset.duration);
-            const matchType = filters.Type.length === 0 || filters.Type.some(type => cardTypes.includes(type));
-            const matchPeople = filters.NumberOfPeople.length === 0 || filters.NumberOfPeople.includes(card.dataset.people);
-            const matchPrice = cardPrice >= minPrice && cardPrice <= maxPrice;
+            let match = true;
+
+            if (filters.Destination.length > 0 && !filters.Destination.includes(card.dataset.destination)) {
+                match = false;
+            }
+
+            if (filters.Duration.length > 0 && !filters.Duration.includes(card.dataset.Duration)) {
+                match = false;
+            }
+
+            if (filters.NumberOfPeople.length > 0 && !filters.NumberOfPeople.includes(card.dataset.people)) {
+                match = false;
+            }
+
+            if (filters.Type.length > 0 && !filters.Type.some(type => cardTypes.includes(type))) {
+                match = false;
+            }
+
+            if (cardPrice < minPrice || cardPrice > maxPrice) {
+                match = false;
+            }
 
             //Nếu tour thỏa mãn tất cả các điều kiện -> hiển thị
-            if (matchDestination && matchDestination && matchPeople && matchType && matchPrice) {
+            if (match) {
                 card.style.display = "block";
             }
             else {
@@ -203,7 +219,6 @@ document.addEventListener("DOMContentLoaded", function(){
                 const title = card.querySelector('h3')?.textContent?.trim();
                 if (title === targetTitle) {
                     card.scrollIntoView({behavior: 'smooth', block: 'center'});
-                    card.classList.add('highlight-tour');
                 }
                 else {
                     card.style.display = "none";
