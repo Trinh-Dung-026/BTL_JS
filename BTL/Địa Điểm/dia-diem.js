@@ -15,6 +15,6 @@ const sidebar = document.getElementById('sidebar');
 document.querySelectorAll('.destination-card').forEach(card => {
     card.addEventListener('click', function() {
         const diaDiem = card.dataset.DiaDiem;
-        window.location.href = `../Tours/tours.html?điadiem=${encodeURIComponent(diaDiem)}`;
+        window.location.href = `../Tours/tours1.html?điadiem=${encodeURIComponent(diaDiem)}`;
     });
 });
