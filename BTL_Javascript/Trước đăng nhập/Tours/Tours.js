@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 match = false;
             }
 
-            if (filters.Duration.length > 0 && !filters.Duration.includes(card.dataset.Duration)) {
+            if (filters.Duration.length > 0 && !filters.Duration.includes(card.dataset.duration)) {
                 match = false;
             }
 
