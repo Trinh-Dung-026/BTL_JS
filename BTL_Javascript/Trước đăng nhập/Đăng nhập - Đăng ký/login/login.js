@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         alert("Đăng nhập thành công!");
-        // Ở đây có thể chuyển hướng hoặc lưu thông tin phiên
-        window.location.href = encodeURI("../Đăng nhập trước và sau/index.html");
+        // Chuyển hướng đến trang sau đăng nhập
+        window.location.href = "../../../Sau đăng nhập/index.html";
     });
 });
