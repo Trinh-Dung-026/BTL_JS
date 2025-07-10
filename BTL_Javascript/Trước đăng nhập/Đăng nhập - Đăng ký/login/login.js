@@ -50,6 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         alert("Đăng nhập thành công!");
         // Chuyển hướng đến trang sau đăng nhập
-        window.location.href = "../../../Sau đăng nhập/index.html";
+        window.location.href = "../../../../BTL/Đăng nhập trước và sau/index.html";
     });
 });

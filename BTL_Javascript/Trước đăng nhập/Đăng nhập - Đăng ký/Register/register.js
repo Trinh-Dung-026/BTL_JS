@@ -85,6 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     registerForm.reset();
 
-    window.location.href = "login.html";
+    window.location.href = "../login/login.html";
   });
 });
