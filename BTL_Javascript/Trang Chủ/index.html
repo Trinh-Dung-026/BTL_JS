@@ -19,16 +19,16 @@
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="../Tours/Tours.html">Tours</a></li>
-            <li><a href="../Địa điểm/dia-diem.html">Địa Điểm</a></li>
-            <li><a href="#">Hợp tác với chúng tôi</a></li>
+            <li><a href="../Địa Điểm/dia-diem.html">Địa Điểm</a></li>
+            <li><a href="../Hợp tác/hop-tac.html">Hợp tác với chúng tôi</a></li>
           </ul>
         </nav>
 
         <div class="header-right">
-          <a href="#" class="icon"><i class="fas fa-shopping-cart"></i></a> <!--nút giỏ hàng-->
+          <a href="#" class="icon"><i class="fas fa-shopping-cart "></i></a>
           <a href="../Trang Đăng nhập - Đăng ký/login.html" class="cta-btn"><i class="fa-solid fa-user fa-xs"></i>Login</a>
 
-          <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>  <!--menu-->
+          <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
 
           <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
@@ -38,9 +38,8 @@
             <ul class="sidebar-menu">
               <li><a href="#">Tài khoản</a></li>
               <li><a href="#">Lịch sử đặt vé</a></li>
-              <li><a href="#">Ưu đãi & khuyến mãi</a></li>
               <li><a href="#">Cài đặt</a></li>
-              <li><a href="../Trang Đăng nhập - Đăng ký/login.html">Đăng xuất</a></li>
+              <li><a href="#">Đăng xuất</a></li>
             </ul>
           </div>
         </div>
@@ -54,69 +53,31 @@
       </div>
     </main>
 
-    <div class="searchbar">
-      <div class="search-item">
-        <label>Địa điểm:</label>
-        <div class="input-box">
-          <input type="text" placeholder="Bạn sẽ đi đâu...?">
-          <i class="fas fa-map-marker-alt"></i>
-        </div>
-      </div>
-
-      <div class="search-item">
-        <label>Từ:</label>
-        <div class="input-box">
-          <input type="date">
-          <i class="fas fa-calendar-alt"></i>
-        </div>
-      </div>
-
-      <div class="search-item">
-        <label>Đến:</label>
-        <div class="input-box">
-          <input type="date" >
-          <i class="fas fa-calendar-alt"></i>
-        </div>
-      </div>
-
-      <div class="search-item guest-dropdown-wrapper">
-        <label>Khách:</label>
-        <div class="input-box" id="guest-toggle">
-          <input type="text" placeholder="Số lượng?" readonly>
-          <i class="fas fa-user-friends"></i>
-        </div>
-
-        <div class="guest-dropdown" id="guest-dropdown">
-          <div class="guest-row">
-            <span>Phòng</span>
-            <div class="stepper">
-              <button class="minus">-</button>
-              <span class="value" data-type="rooms">0</span>
-              <button class="plus">+</button>
-            </div>
+    <section class="featured-tours">
+      <div class="featured-box">
+        <h2 class="section-title">Tour Nổi bật</h2>
+        <div class="tour-list">
+          <div class="tour-card">
+            <img src="../image/Vinh-Ha-Long-1.jpg" alt="Tour Hạ Long">
+            <h3>Vịnh Hạ Long</h3>
+            <p>Giá chỉ từ: 200.000 VNĐ</p>
+            <a href="../Tours/Tours.html?tour=vinh_ha_long" class="tour-btn">Xem chi tiết</a>
           </div>
-
-          <div class="guest-row">
-            <span>Người Lớn</span>
-            <div class="stepper">
-              <button class="minus">-</button>
-              <span class="value" data-type="adults">0</span>
-              <button class="plus">+</button>
-            </div>
+          <div class="tour-card">
+            <img src="../image/Trang_An.jpg" alt="Tràng An">
+            <h3>Tràng An</h3>
+            <p>Giá chỉ từ: 220.000 VNĐ</p>
+            <a href="../Tours/Tours.html?tour=trang_an" class="tour-btn">Xem chi tiết</a>
           </div>
-
-          <div class="guest-row">
-            <span>Trẻ em</span>
-            <div class="stepper">
-              <button class="minus">-</button>
-              <span class="value" data-type="children">0</span>
-              <button class="plus">+</button>
-            </div>
+          <div class="tour-card">
+            <img src="../image/PuLuong.jpg" alt="ádas">
+            <h3>Khu bảo tồn thiên nhiên Pù Luông</h3>
+            <p>Giá chỉ từ: 2.200.000 VNĐ</p>
+            <a href="../Tours/Tours.html?tour=pu_luong" class="tour-btn">Xem chi tiết</a>
           </div>
         </div>
       </div>
-      <button class="search-btn"><i class="fas fa-search"></i> Tìm Kiếm</button>
-    </div>
+    </section>
   </div>
   
   <footer class="desktop-footer">
@@ -126,7 +87,7 @@
                 <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
                 <div class="info-content">
                     <h3>Trụ sở chính</h3>
-                    <p>122, Hoàng Quốc Việt, Cầu Giấy, Hà Nội, Việt Nam</p>
+                    <p>122 Hoàng Quốc Việt, Cổ Nhuế, Cầu Giấy, Hà Nội</p>
                 </div>
             </div>
             <div class="desktop-footer-info-item">
@@ -152,7 +113,7 @@
         <div class="footer-container">
             <div class="desktop-footer-col about-us">
                 <div class="footer-logo">
-                    <img src="../image/logo.png" alt="EasyTicket Logo">
+                    <img src="/BTL_Javascript/image/logo.png" alt="EasyTicket Logo">
                     <span>EasyTicket</span>
                 </div>
                 <p>Mục tiêu và sứ mệnh là để cho người Việt được tận hưởng kì nghỉ bằng cách đặt vé một cách đơn giản, tiện lợi nhất.</p>
@@ -167,8 +128,8 @@
                 <h3>Links Nhanh</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="../Tours/Tours.html">Tours</a></li>
-                    <li><a href="../Địa điểm/dia-diem.html">Địa Điểm</a></li>
+                    <li><a href="#">Tours</a></li>
+                    <li><a href="#">Địa Điểm</a></li>
                     <li><a href="#">Về Chúng Tôi</a></li>
                 </ul>
             </div>
