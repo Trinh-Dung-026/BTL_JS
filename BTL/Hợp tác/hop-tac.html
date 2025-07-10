@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hợp tác với chúng tôi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="hop-tac.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../Đăng nhập trước và sau/indexbefore.html"><img src="../image/logo.png"></a>
+            </div>
+
+            <div class="navbar">
+                <ul class="nav-links">
+                    <li><a href="../Đăng nhập trước và sau/indexbefore.html">Home</a></li>
+                    <li><a href="../Tours/Tours.html">Tours</a></li>
+                    <li><a href="../Địa điểm/dia-diem.html">Địa Điểm</a></li>
+                    <lI><a href="hop-tac.html">Hợp tác với chúng tôi</a></lI>
+                </ul>
+            </div>
+
+            <div class="header-right">
+                <a href="#" class="icon"><i class="fas fa-shopping-cart"></i></a>
+                <a href="../login/login.html" class="cta-btn"><i class="fa-solid fa-user fa-xs"></i>Login</a>
+
+                <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+            
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="../image/logo.png" alt="EasyTicket Logo">
+            <button class="close-btn"><i class="fas fa-times"></i></button>
+        </div>
+            <ul class="sidebar-menu">
+                <li><a href="../login/login.html">Tài Khoản</a></li>
+                <li><a href="#">Lịch sử đặt vé</a></li>
+                <li><a href="#">Cài đặt</a></li>
+                <li><a href="../Trang Đăng nhập - Đăng ký/login.html">Đăng Xuất</a></li>
+            </ul>
+    </div>
+
+    <div class="containers">
+        <div class="header">
+            <h1>🌟 Form Hợp Tác Tour Du Lịch 🌟</h1>
+            <p>Chào mừng đến với EasyTicket! Hãy điền form dưới đây để bắt đầu hợp tác đưa tour du lịch của bạn đến với khách hàng của chúng tôi.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>📞 Liên Hệ Nhanh</h3>
+            <p>Email: EasyTicket@gmail.com | Hotline: 0976815770</p>
+        </div>
+        
+        <form id="cooperationForm">
+            <!-- Thông tin công ty -->
+            <div class="form-section">
+                <h2 class="section-title">🏢 Thông Tin Công Ty</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="companyName">Tên Công Ty <span class="required">*</span></label>
+                        <input type="text" id="companyName" name="companyName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="businessLicense">Mã Số Thuế/ĐKKD <span class="required">*</span></label>
+                        <input type="text" id="businessLicense" name="businessLicense" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="companyAddress">Địa Chỉ Công Ty <span class="required">*</span></label>
+                    <input type="text" id="companyAddress" name="companyAddress" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="website">Website Công Ty</label>
+                        <input type="url" id="website" name="website" placeholder="https://yourcompany.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="foundedYear">Năm Thành Lập</label>
+                        <input type="number" id="foundedYear" name="foundedYear" min="1900" max="2025">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Thông tin liên hệ -->
+            <div class="form-section">
+                <h2 class="section-title">👤 Thông Tin Người Liên Hệ</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactName">Họ Tên <span class="required">*</span></label>
+                        <input type="text" id="contactName" name="contactName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Chức Vụ <span class="required">*</span></label>
+                        <input type="text" id="position" name="position" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số Điện Thoại <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Thông tin tour -->
+            <div class="form-section">
+                <h2 class="section-title">🎯 Thông Tin Tour & Hợp Tác</h2>
+                
+                <div class="form-group">
+                    <label for="tourTypes">Loại Tour Chính <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="domestic" name="tourTypes" value="domestic">
+                            <label for="domestic">Tour Trong Nước</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="international" name="tourTypes" value="international">
+                            <label for="international">Tour Quốc Tế</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="adventure" name="tourTypes" value="adventure">
+                            <label for="adventure">Tour Mạo Hiểm</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cultural" name="tourTypes" value="cultural">
+                            <label for="cultural">Tour Văn Hóa</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="beach" name="tourTypes" value="beach">
+                            <label for="beach">Tour Biển Đảo</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mountain" name="tourTypes" value="mountain">
+                            <label for="mountain">Tour Núi Rừng</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="luxury" name="tourTypes" value="luxury">
+                            <label for="luxury">Tour Cao Cấp</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="budget" name="tourTypes" value="budget">
+                            <label for="budget">Tour Tiết Kiệm</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tourCount">Số Lượng Tour/Tháng</label>
+                        <select id="tourCount" name="tourCount">
+                            <option value="">Chọn số lượng</option>
+                            <option value="1-10">1-10 tour</option>
+                            <option value="11-50">11-50 tour</option>
+                            <option value="51-100">51-100 tour</option>
+                            <option value="100+">Trên 100 tour</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="avgPrice">Giá Tour Trung Bình</label>
+                        <select id="avgPrice" name="avgPrice">
+                            <option value="">Chọn mức giá</option>
+                            <option value="under-5m">Dưới 5 triệu</option>
+                            <option value="5-10m">5-10 triệu</option>
+                            <option value="10-20m">10-20 triệu</option>
+                            <option value="20-50m">20-50 triệu</option>
+                            <option value="over-50m">Trên 50 triệu</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="popularDestinations">Điểm Đến Phổ Biến <span class="required">*</span></label>
+                    <textarea id="popularDestinations" name="popularDestinations" placeholder="Ví dụ: Đà Nẵng, Hội An, Phú Quốc, Thái Lan, Singapore..." required></textarea>
+                </div>
+            </div>
+            
+            <!-- Hình thức hợp tác -->
+            <div class="form-section">
+                <h2 class="section-title">🤝 Hình Thức Hợp Tác Mong Muốn</h2>
+                
+                <div class="form-group">
+                    <label for="cooperationType">Loại Hợp Tác <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="banner" name="cooperationType" value="banner">
+                            <label for="banner">Banner Quảng Cáo</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="featured" name="cooperationType" value="featured">
+                            <label for="featured">Tour Nổi Bật</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="article" name="cooperationType" value="article">
+                            <label for="article">Bài Viết PR</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="newsletter" name="cooperationType" value="newsletter">
+                            <label for="newsletter">Email Marketing</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="social" name="cooperationType" value="social">
+                            <label for="social">Social Media</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="affiliate" name="cooperationType" value="affiliate">
+                            <label for="affiliate">Affiliate Marketing</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="budget">Ngân Sách Dự Kiến (VNĐ)</label>
+                        <select id="budget" name="budget">
+                            <option value="">Chọn ngân sách</option>
+                            <option value="under-10m">Dưới 10 triệu</option>
+                            <option value="10-50m">10-50 triệu</option>
+                            <option value="50-100m">50-100 triệu</option>
+                            <option value="100-500m">100-500 triệu</option>
+                            <option value="over-500m">Trên 500 triệu</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Thời Gian Hợp Tác</label>
+                        <select id="duration" name="duration">
+                            <option value="">Chọn thời gian</option>
+                            <option value="1-month">1 tháng</option>
+                            <option value="3-months">3 tháng</option>
+                            <option value="6-months">6 tháng</option>
+                            <option value="1-year">1 năm</option>
+                            <option value="long-term">Dài hạn</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Thông tin bổ sung -->
+            <div class="form-section">
+                <h2 class="section-title">📋 Thông Tin Bổ Sung</h2>
+                
+                <div class="form-group">
+                    <label for="experience">Kinh Nghiệm Hợp Tác Marketing</label>
+                    <textarea id="experience" name="experience" placeholder="Mô tả kinh nghiệm hợp tác với các website/platform khác..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="requirements">Yêu Cầu Đặc Biệt</label>
+                    <textarea id="requirements" name="requirements" placeholder="Có yêu cầu đặc biệt nào không? (Ví dụ: thời gian đăng bài, target audience...)"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="additionalInfo">Thông Tin Thêm</label>
+                    <textarea id="additionalInfo" name="additionalInfo" placeholder="Thông tin khác mà bạn muốn chia sẻ..."></textarea>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">🚀 Gửi Đề Xuất Hợp Tác</button>
+        </form>
+    </div>
+    
+      <footer class="desktop-footer">
+    <div class="desktop-footer-top">
+        <div class="footer-container">
+            <div class="desktop-footer-info-item">
+                <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="info-content">
+                    <h3>Trụ sở chính</h3>
+                    <p>122, Hoàng Quốc Việt, Cầu Giấy, Hà Nội, Việt Nam</p>
+                </div>
+            </div>
+            <div class="desktop-footer-info-item">
+                <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                <div class="info-content">
+                    <h3>Số Điện Thoại</h3>
+                    <p>+869-878-08-68</p>
+                    <p>+869-878-08-68</p>
+                </div>
+            </div>
+            <div class="desktop-footer-info-item">
+                <div class="icon-box"><i class="far fa-envelope"></i></div>
+                <div class="info-content">
+                    <h3>Mail Cho Chúng Tôi</h3>
+                    <p>EasyTicket@support.com</p>
+                    <p>EasyTicket@support.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="desktop-footer-bottom">
+        <div class="footer-container">
+            <div class="desktop-footer-col about-us">
+                <div class="footer-logo">
+                    <img src="../image/logo.png" alt="EasyTicket Logo">
+                    <span>EasyTicket</span>
+                </div>
+                <p>Mục tiêu và sứ mệnh là để cho người Việt được tận hưởng kì nghỉ bằng cách đặt vé một cách đơn giản, tiện lợi nhất.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="desktop-footer-col quick-links">
+                <h3>Links Nhanh</h3>
+                <ul>
+                    <li><a href="../Trang Chủ/index.html">Home</a></li>
+                    <li><a href="../Tours/Tours.html">Tours</a></li>
+                    <li><a href="../Địa điểm/dia-diem.html">Địa Điểm</a></li>
+                    <li><a href="#">Về Chúng Tôi</a></li>
+                </ul>
+            </div>
+            <div class="desktop-footer-col gallery-post">
+                <h3>Bộ Sưu Tập</h3>
+                <div class="gallery-grid">
+                    <img src="../image/bg.jpg" alt="Gallery Image 1">
+                    <img src="../image/dao-tuan-chau2.jpg" alt="Gallery Image 2">
+                    <img src="../image/dffb6e561136d5a826693b3dce4421fa.jpg" alt="Gallery Image 3">
+                    <img src="../image/tuan-chau-island-thumbnail_1648189683.jpg" alt="Gallery Image 4">
+                    <img src="../image/bai-bien-dao-tuan-chau.webp" alt="Gallery Image 5">
+                    <img src="../image/avt (2).jpg" alt="Gallery Image 6">
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="desktop-back-to-top"><i class="fas fa-arrow-up"></i></a>
+  </footer>
+  <script src="hop-tac.js"></script>
+</body>
+</html>
