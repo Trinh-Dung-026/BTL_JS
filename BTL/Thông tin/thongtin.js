@@ -58,5 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem(username, JSON.stringify(updatedData));
 
     alert("Cập nhật thông tin thành công!");
+    window.location.href = encodeURI("../Đăng nhập trước và sau/index.html");
   });
 });
