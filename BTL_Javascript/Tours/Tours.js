@@ -178,4 +178,37 @@ document.addEventListener("DOMContentLoaded", function(){
         //Hiển thị lại toàn bộ tour
         filterTours();
     })
+
+    // Hiển thị tour từ trang chủ
+    const params = new URLSearchParams(window.location.search);
+    const tourParam = params.get("tour");
+
+    if (tourParam) {
+        // Map cacs gias trij URL với tiêu đề tour
+        const tourMap = {
+            vinh_ha_long: "Vịnh Hạ Long",
+            sunworld: "SunWorld Hạ Long Park",
+            trang_an: "Tràng An",
+            tam_coc: "Tam Cốc - Bích Đồng",
+            pu_luong: "Khu bảo tồn thiên nhiên Pù Luông",
+            thanh_nha_ho: "Thành Nhà Hồ",
+            xuan_son: "Vườn Quốc Gia Xuân Sơn",
+            ao_gioi: "Ao Giời - Suối Tiên"
+        };
+
+        const targetTitle = tourMap[tourParam];
+
+        if (targetTitle) {
+            tourCards.forEach(card => {
+                const title = card.querySelector('h3')?.textContent?.trim();
+                if (title === targetTitle) {
+                    card.scrollIntoView({behavior: 'smooth', block: 'center'});
+                    card.classList.add('highlight-tour');
+                }
+                else {
+                    card.style.display = "none";
+                }
+            })
+        }
+    }
 })
