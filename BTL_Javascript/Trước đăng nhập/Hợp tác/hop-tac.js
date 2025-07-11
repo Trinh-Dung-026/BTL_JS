@@ -63,6 +63,7 @@ document.getElementById('cooperationForm').addEventListener('submit', function(e
     
     // Show success message
     alert('🎉 Cảm ơn bạn đã quan tâm! Chúng tôi sẽ liên hệ lại trong vòng 24h.');
+    window.location.href = '../Trang chủ/index.html'; // Redirect to home page after submission
     
     // You can add actual form submission logic here
     // For example, send data to your server:
